@@ -1,0 +1,127 @@
+\documentclass[10pt,fleqn]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+	\title{经济学综合第一次作业}	
+	\author{任庆杰 \quad 经济学院 \quad 1801211574}
+\usepackage{geometry} %边框
+%\geometry{top=2.54cm,bottom=2.54cm,left=1cm,right=1cm}
+\geometry{a4paper,scale=0.8}
+\begin{document}
+	\maketitle
+\section*{7.E.1}
+\subsection*{(a)}
+选手一的可能策略\{(L,x,x),~(L,x,y),~(L,y,x),~(L,y,y),~(M,x,x),~(M,x,y),~(M,y,x),~(M,y,y),~(R,x,x),~(R,x,y),~(R,y,x),~(R,y,y)\};
+
+选手二的可能策略\{(l),~(r)\}.
+\subsection*{(b)}
+选手一的行为策略:在第一个节点，以概率$p^1_L$选择L行动，以概率$p^1_M$选择M行动，以概率$p^1_R$选择R行动；在第二个节点，以概率$p_x^1$选择x行动，以概率$p_y^1$选择y行动；在第三个节点，以概率$p_{x'}^1$选择x行动，以概率$p_{y'}^1$选择y行动。且满足$p^1_L+p^1_M+p^1_R=1$,~$p^1_x+p^1_y=1$,~$p_{x'}^1+p_{y'}^1=1$.
+
+那么这个行动等同于混合策略：
+以概率$p^1_L \cdot p_x^1\cdot p_{x'}^1$采用(L,x,x),
+以概率$p^1_L \cdot p_x^1\cdot p_{y'}^1$采用(L,x,y),
+以概率$p^1_L \cdot p_y^1\cdot p_{x'}^1$采用(L,y,x),
+以概率$p^1_L \cdot p_y^1\cdot p_{y'}^1$采用(L,y,y),
+以概率$p^1_M \cdot p_x^1\cdot p_{x'}^1$采用(M,x,x),
+以概率$p^1_M \cdot p_x^1\cdot p_{y'}^1$采用(M,x,y),
+以概率$p^1_M \cdot p_y^1\cdot p_{x'}^1$采用(M,y,x),
+以概率$p^1_M \cdot p_y^1\cdot p_{y'}^1$采用(M,y,y),
+以概率$p^1_R \cdot p_x^1\cdot p_{x'}^1$采用(R,x,x),
+以概率$p^1_R \cdot p_x^1\cdot p_{y'}^1$采用(R,x,y),
+以概率$p^1_R \cdot p_y^1\cdot p_{x'}^1$采用(R,y,x),
+以概率$p^1_R \cdot p_y^1\cdot p_{y'}^1$采用(R,y,y).
+
+假设选手二的行为策略：以概率$p^2_l$选择l行动，以概率$p^2_r$选择r行动($p^2_l +p^2_r=1 $)。那么可以得到，选手一选用上面行为策略和混合策略时，最终达到$T_0$,~$T_1$...$T_8$的概率均相等。
+\subsection*{(c)}
+假设选手一的混合策略，选择各个策略的概率分别为$\{p_1,~p_2,~p_3...p_{12} \vert \sum_{i=1}^{12} p_i=1 \}$.
+
+那么这个行动等同于行为策略：\\
+在信息集1时以$(p_1+p_2+p_3+p_4)$选择L,以$(p_5+p_6+p_7+p_8)$选择M,以$(p_9+p_{10}+p_{11}+p_{12})$选择行动R;\\
+在信息集2时以$\frac{p_5+p_7}{p_5+p_6+p_7+p_8}$选择x,以$\frac{p_6+p_8}{p_5+p_6+p_7+p_8}$选择y;\\
+在信息集3时以$\frac{p_{9}+p_{11}}{p_9+p_{10}+p_{11}+p_{12}} $选择x，以$\frac{p_{10}+p_{12}}{p_9+p_{10}+p_{11}+p_{12}} $选择y.
+\subsection*{(d)}
+在第二轮的信息集合并之后，对于选手一来说，无法区分自己第一轮行动是采用了M还是R,因此这不是完美记忆博弈。
+
+在这种情况下，\emph{(b)中的结论依然成立}。假设选手一的行为策略是在第一轮，以概率$p^1_L$选择L行动，以概率$p^1_M$选择M行动，以概率$p^1_R$选择R行动；在第二轮，以概率$p_x^1$选择x行动，以概率$p_y^1$选择y行动。那么这个行为策略等价于以下混合策略：
+
+以概率$p^1_L \cdot p^1_x$选择(L,~x);
+以概率$p^1_L \cdot p^1_y$选择(L,~y);
+以概率$p^1_M \cdot p^1_x$选择(M,~x);
+以概率$p^1_M \cdot p^1_y$选择(M,~y);
+以概率$p^1_R \cdot p^1_x$选择(R,~x);
+以概率$p^1_R \cdot p^1_y$选择(R,~y).
+
+\emph{(c)中的结论不成立}。在通过混合策略得到行为策略的过程中，需要区分开第一轮行动是M还是R，而在不完美记忆中，不能实现。假设选手一的混合策略：选择各个策略的概率分别为$\{p_1,~p_2,~p_3...p_{6} \vert \sum_{i=1}^{6} p_i=1 \}$. 
+
+那么与之相对应的行为策略：\\
+在第一轮行动中，选择L、M、R的概率分别为$(p_1+p_2)$,~$(p_3+p_4)$,~$(p_5+p_6)$.\\
+在第二轮行动中，由于存在不完美记忆，一定要保证$\frac{p_3}{p_4}=\frac{p_5}{p_6}$才会使得x和y的概率有解。即，当$\frac{p_3}{p_4}\neq \frac{p_5}{p_6}$时，该混合策略没有对应的行动策略。
+
+\section*{8.B.5}
+\subsection*{(a)}
+在只有两家企业时，对于企业1来说，利润$f(q_1)=[a-b(q_1+q_2)-c]\cdot q_1 $,\\
+令$f'(q_1)=0 $，得到在$q_2$确定的情况下，企业1的最优反应$q_1^{*}=\frac{a-c}{2b}-\frac{q_2}{2} $\\
+$\because q_2 \geq 0 $ \\
+$\therefore q_1^* \leq \frac{a-c}{2b} $ \\
+% 同理可得$q_2^* \leq \frac{a-c}{ab} $ \\
+$\therefore q_2^* = \frac{a-c}{2b}-\frac{q_1}{2} \geq
+\frac{a-c}{2b}-\frac{a-c}{2b}\ast \frac{1}{2} =
+\frac{a-c}{4b} $ \\
+$\therefore q_1^* =\frac{a-c}{2b}-\frac{q_2}{2} \leq \frac{3(a-c)}{8b} $ \\
+...\\
+通过重复剔除严格劣势策略，可以发现$q_1^*$和$q_2^*$的范围不断缩小，直到
+\begin{displaymath}
+% \begin{equation}
+\left\{
+	\begin{array}{l}
+		q_1^* =\frac{a-c}{2b}-\frac{q_2^*}{2} \\
+		q_2^* =\frac{a-c}{2b}-\frac{q_1^*}{2}
+	\end{array}
+\right.
+\end{displaymath}
+解得$q_1^*= q_2^*=\frac{a-c}{3b}$. 最终得到了唯一结果（博弈的纳什均衡）。
+\subsubsection*{(b)}
+如果有三个企业，该结论不成立。
+
+有三家企业时，企业1的利润利润$f(q_1)=[a-b(q_1+q_2+q_3)-c]\cdot q_1 $,\\
+最优反应：~$q_1^{*}=\frac{a-c}{2b}-\frac{q_2+q_3}{2} $ .\\
+将$q_2,q_3 \geq 0 $带入，得到：~ $q_1^* \leq \frac{a-c}{2b}  $ .\\
+继续将$q_2,  q_3 \leq \frac{a-c}{2b} $带入，得到：
+~ $q_1^* \geq 0$ . \\
+可以发现，$q_1^* $的范围并没有缩小。因此重复剔除严格劣势策略并不能得到唯一的结果。
+
+\section*{8.C.2}
+\paragraph{证明删除顺序不会影响经过重复删除决不是最优反应的策略过程后幸存的策略集。} 
+
+\paragraph{\textbf{证明：}}
+
+证明过程分为两步：(1)若一个策略是大集合中的NBT，那么任意给定的剔除顺序后该策略仍在剔除的解集中，那么该策略仍是这个解集（大集合的子集）的NBT。(2)无论任何顺序，经过重复剔除NBT后的小集合都相等。
+
+首先定义策略博弈$\langle N,S,u \rangle $,~其中N是参与者，S是策略空间，u是支付函数向量。~$X \to X'$表示策略空间$X= \times_{i=1}^{N}X_i,  X \subseteq S $~经过一轮剔除NBT(决不是最优反应的策略)过程后变为$X' $。~假设通过不同的剔除NBT的顺序,剔除到不能继续剔除时得到了两个子集分别是$X^k $~和$\bar{X}^{\bar{k}} $
+
+\emph{引理(1):$X^k \subseteq Y $是第k轮剔除NBT后策略集。如果$s_i \in X_i^k$是给定集合Y情况下的NBT,那么$s_i \in X^K_i $也一定是给定$X^k$时的NBT。}
+
+论证：已知$s_i \in X_i^k$是给定集合Y情况下的NBT，那么一定存在混合策略$s^1_i \in Y$，满足$u(s^1_i) \geq u(s_i) $。如果$s^1_i \in X_i^k$，即$s^1_i $包含的每个行动概率大于0的纯策略都被包含在$X_i^k $中， 那么显然引理(1)成立。
+
+如果$s^1_i \notin X_i^k$, 即$s^1_i $包含的每个行动概率大于0的纯策略至少有一个不被包含在$X_i^k $中则$s^1_i $是被剔除的NBT，那么一定存在混合策略$s^2_i \in Y$，满足$u(s^2_i) \geq u(s^1_i) $。如果$s^2_i \in X_i^k$，那么显然引理(1)成立。
+
+否则，则可以继续找到$s^3_i $... 在有限博弈中，总可以找到$s^m_i \in X_i^k$,满足$u(s^m_i) \geq u(s^{m-1}_i \geq ... \geq u(s^2_i) \geq u(s^1_i) $。则引理(1)得证。
+
+\emph{然后通过反证法证明$X^k = \bar{X}^{\bar{k}} $。}
+
+如果$X^k \neq \bar{X}^{\bar{k}} $，那么一定存在纯策略$s \in \bar{X}^{\bar{k}} $满足$s \notin X^k $；或者存在$s \in X^k $满足$s \notin \bar{X}^{\bar{k}} $。 不妨假设$s \in \bar{X}^{\bar{k}} $满足$s \notin X^k $，那么：
+
+$\because s \notin X^k $且$s \in Y$,
+
+$\therefore s $一定作为NBT被剔除；
+
+又$\because s \in \bar{X}^{\bar{k}}$,
+
+$\therefore s$是$\bar{X}^{\bar{k}}$的NBT。这与$\bar{X^{\bar{k}}}$不能被继续剔除的假设矛盾。
+
+证毕。
+
+
+
+
+
+\end{document}

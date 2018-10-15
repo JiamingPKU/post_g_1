@@ -1,0 +1,115 @@
+\documentclass[11pt,fleqn]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amssymb}
+	\title{经济学综合第二次作业}	
+	\author{任庆杰 \quad 经济学院 \quad 1801211574}
+\usepackage{geometry} %边框
+%\geometry{top=2.54cm,bottom=2.54cm,left=1cm,right=1cm}
+\geometry{a4paper,scale=0.85}
+\begin{document}
+    \maketitle
+
+\section*{8.B.7}
+	\paragraph{证明博弈$[I,\{\Delta (S_i) \}, \{u_i(\dot)\}] $的任何严格优势策略必定是纯策略。\\ }
+
+
+	假设一个存在严格优势策略的博弈$[I,\{\Delta (S_i) \}, \{u_i(\dot)\}] $的其中一个严格优势策略$\sigma_i $不是纯策略。那么假设组成$\sigma_i $这个混合策略的行动概率大于0的纯策略分别是$s_1, s_2 ... s_n $，其对应的行动概率依次是$p_1, p_2 ... p_n $，对应的其他人的行动策略是$\sigma_{-i} $。
+
+	$\because \sigma_i$是严格优势策略 
+
+	$\therefore u(\sigma_i) > u(s_1), u(\sigma_i)>u(s_2) \quad ... \quad u(\sigma_i) >u(s_n)$.
+	\begin{displaymath}
+		\therefore u(\sigma_i)= \sum_{k=1}^{n}p_k u(\sigma_i) > \sum_{k=1}^n p_k u(s_k)
+	\end{displaymath}
+	 
+
+	矛盾。故得证：博弈$[I,\{\Delta (S_i) \}, \{u_i(\dot)\}] $的任何严格优势策略必定是纯策略。
+
+\section*{8.C.4}
+	\subsection*{(a)}
+		假设选手2选择$U$和$D$的行动概率分别是$p$和$1-p$，选手3选$l$和$r $的行动概率分别是$q$和$1-q$.由于选手2和3的选择是随机独立的，那么两人的行动组合落在四个区域的概率分别是$pq, p(1-q),(1-p)q, (1-p)(1-q) $. 那么对于选手1来说，纯策略$L,M,R$的期望收益分别为：
+		\begin{eqnarray*}
+			U(L)&=&(\pi+4\epsilon)\cdot q + (\pi - 4\epsilon) \cdot (1-q) = \pi-4\epsilon + 8\epsilon q  \\
+			U(M) &=&(\pi-\eta)\cdot [pq+(1-p)(1-q)] + (\pi+\frac{\eta}{2} )\cdot [p(1-q)+(1-p)q] 
+			% = \pi+\eta\cdot(-3pq + \frac{3}{2}p +\frac{3}{2}q- 1  ) 
+			= \pi + \eta\cdot [\frac{3}{2}p(1-2q)+\frac{3}{2}q-1 ] \\
+			U(R) &=&(\pi-4\epsilon)\cdot q + (\pi+4\epsilon)\cdot (1-q) = \pi+4\epsilon-8\epsilon q
+		\end{eqnarray*}
+
+		当$0\leq q < \frac{1}{2} $时，$U(M) \leq \pi + \eta \cdot [ \frac{3}{2}(1-2q)+\frac{3}{2}q-1 ]= \pi + \eta \cdot (\frac{1}{2} - \frac{3}{2}q)\leq \pi + \eta \cdot (\frac{1}{2} - \frac{3}{2}q + \frac{1}{2} - \frac{1}{2}p) = \pi + \eta (1-2p) < \pi + 4\epsilon \cdot (1-2q) = U(R) $; 
+
+		当$ \frac{1}{2} < q \leq 1$时, $U(M) \leq \pi + \eta \cdot (\frac{3}{2}q -1) \leq \pi + \eta \cdot (q-\frac{1}{2} + \frac{1}{2}q-\frac{1}{2}) \leq \pi + \eta \cdot (q-\frac{1}{2}) 
+		< \pi + 4\epsilon \cdot (q-\frac{1}{2})
+		< \pi + 4\epsilon \cdot (2q-1)$
+
+		当$q=\frac{1}{2}$时，$U(M) = \pi - \frac{1}{4}\eta < \pi = U(L)=U(R) $
+
+		所以，一定存在纯策略L或纯策略R严格优于（纯）策略M，选手1的（纯）策略M绝不是最优反应。
+	\subsection*{(b)}
+		通过反证法。如果（纯）策略M是严格劣势的，那么选手1一定存在一个策略s：以$w$的概率选择$L$行动，以$1-w$的概率选择行动$R$，严格优于纯策略M $(0\leq w \leq 1)$.即$E[U(s)] > U(M) $对于任意$p,q \in [0,1]$都成立。
+		\begin{displaymath}
+			E[U(s)]= w\cdot U(L)+ (1-w)\cdot U(R) = \pi + 4\epsilon(2q-1)(2w-1)
+		\end{displaymath}
+
+		当$\frac{1}{2} < q < 1$时，$U(M) 
+		= \pi + \eta\cdot [\frac{3}{2}p(1-2q)+\frac{3}{2}q-1 ] 
+		= \pi + \frac{\eta}{4} \cdot [(2q-1)(3-6p)+(12p-7)] $. \quad
+		当$p \in [\frac{1}{2}, \frac{7}{12}]$时，$U(M)>0 \Rightarrow  E[U(s)]>0  \Rightarrow w > \frac{1}{2}$.
+
+		当$0<q < \frac{1}{2}  $时，$U(M) 
+		= \pi + \eta\cdot [\frac{3}{2}p(1-2q)+\frac{3}{2}q-1 ]
+		= \pi + \frac{\eta}{4} \cdot [(1-2q)(6p-3)+(12p-7)] $. \quad
+		当$p \in (\frac{7}{12},1 ) $时，$U(M)>0 \Rightarrow E[U(s)] > 0 \Rightarrow w < \frac{1}{2} $.
+
+		矛盾。故得证。
+	\subsection*{(c)}
+	假设$p=q=\frac{1}{2} $；且假设当选手2选择$D$时，选手3一定选择$l$行动，当选手2选择$U$时，选手3一定选择$R$行动。且选手1看不到另两个人的行动。那么选手1的最优反应是(纯)策略M。
+
+	此时选手1在$\{L,R \}$中的混合策略的期望收益为$\pi$，选择纯策略$M$的期望收益为$\pi+\frac{\eta}{2} $. 所以纯策略M是最优反应。
+	
+
+\section*{8.D.2}
+	\paragraph{证明如果经过重复删除严格劣势策略过程后只幸存下唯一一个策略组合，那么该策略组合是个纳什均衡。\\}
+
+	假设对博弈$\Gamma\{I,Y\} $进行重复删除严格劣势策略，第$i$次删除严格劣势策略$s_k$得到剩余的策略组合$X^k$,那么显然有$X^i \subset Y $.假设博弈$\Gamma$的纳什均衡是$\hat{\sigma} $。则对于任意个体$i$和策略$s$，有$u_i(\hat{\sigma_i}, \hat{\sigma}_{-i}) \ge u_i(s_i, \hat{\sigma}_{-i} ) $. \\
+	如果最后幸存的唯一一个策略组合不是$\sigma $，那么说明$\sigma$在之前被作为严格劣策略删除了。即存在一个$k_0$,
+	满足
+	$ s_{k_0} \in \sigma (\sigma_1, \sigma_2 ... \sigma_{I}) $. 因为它是严格劣策略，所以必有$s' \in X^{k^0} $满足：
+	\begin{displaymath}
+		u_i( s_{k_0},\sigma_{-i} ) < u_i(s', \sigma_{-i} ), \qquad s_{k_0} \neq s'
+	\end{displaymath}
+	这与$\sigma$是纳什均衡相矛盾。所以最后幸存的唯一一个策略组合一定是纳什均衡。
+
+
+\section*{8.E.3}
+	假设每家企业能看到自己的生产成本是$c_L$或$c_H$，并选择自己对应的产量$q_L^i$或$q_H^i$，而看不到其他企业的成本。
+
+	在只有两家企业时，那么根据对称性，有
+	\begin{eqnarray*}
+		q_L^1 =q_L^2 , \qquad
+		q_H^1 =q_H^2  
+	\end{eqnarray*}
+
+	对于企业1来说，需要
+	\begin{displaymath}
+		\max \{\mu \cdot[a-b(q_1+q_L)-c_1] \cdot q_1 + (1-\mu)\cdot [a-b(q_1+q_H)-c_1] \cdot q_1 \}
+	\end{displaymath}
+	令其一阶导数为0，有：
+	\begin{displaymath}
+		q_1 = \frac{a-c_1}{2b}-\frac{\mu \cdot q_L + (1-\mu)\cdot  q_H}{2}
+	\end{displaymath}
+	将$q_1=q_L, c_1=c_L $和$q_1=q_H, c_1=c_H $分别代入，可以解得：
+	\begin{eqnarray*}
+	q_H &=& \frac{1}{3b}\cdot [a-c_H +\frac{\mu}{2}(c_L-c_H) ] \\
+	q_L &=& \frac{1}{3b} \cdot [a-c_L + \frac{1-\mu}{2}(c_H-c_L) ]
+	\end{eqnarray*}
+
+\section*{8.F.2}
+	在$(D,L,B_1) $时，对于选手一来说，如果对其他人的策略施加扰动：令$\omega $为\emph{任意}足够小的正数。选手三以概率$\omega $采用策略$B_2$，以概率$1-\omega$采用策略$B_1$，且有 $\omega \rightarrow 0$.
+
+	那么此时对于选手一来说，采用策略$U$的期望收益：$f(U)=1$；采用策略$D$的期望收益$f(D)=1\cdot (1-\omega)+0\cdot \omega = 1-\omega$。所以$D$是选手一的弱劣势纯策略，选手一会从$D$偏离到$U$.
+
+	因此，$(D,L,B_1)$并不是颤抖的手完美均衡。
+
+
+\end{document}
